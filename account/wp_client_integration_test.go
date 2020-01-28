@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	. "github.com/smousa/wpe_engine/account"
+	. "github.com/wpe_merge/wpe_merge/account"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

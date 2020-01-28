@@ -31,6 +31,9 @@ type WPStreamerOption func(s *WPStreamer)
 // WithMaxConcurrentRequests returns a WPStreamerOption that limits the number
 // of max concurrent requests made by the client
 func WithMaxConcurrentRequests(n int64) WPStreamerOption {
+	if n <= 0 {
+		panic("max concurrent requests must be greater than 0")
+	}
 	return func(s *WPStreamer) {
 		s.maxConcurrentRequests = n
 	}
@@ -144,7 +147,10 @@ func (s *WPStreamer) Stream(ctx context.Context, r io.Reader, w io.Writer) error
 		// concurrent requests made to the server.
 		err = sem.Acquire(gctx, 1)
 		if err != nil {
-			return errors.Wrap(g.Wait(), "could not process data")
+			if err := g.Wait(); err != nil {
+				return errors.Wrap(err, "could not process data")
+			}
+			return errors.Wrap(err, "could not process data")
 		}
 
 		g.Go(func() error {

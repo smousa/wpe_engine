@@ -1,3 +1,5 @@
+//+build integration
+
 package account_test
 
 import (
@@ -7,7 +9,7 @@ import (
 	"io"
 
 	"github.com/pkg/errors"
-	. "github.com/smousa/wpe_engine/account"
+	. "github.com/wpe_merge/wpe_merge/account"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -30,6 +32,7 @@ var _ = Describe("StreamerIntegration", func() {
 
 	AfterEach(func() {
 		cancel()
+		emulator.ResetData()
 	})
 
 	getReader := func(records [][]string) io.Reader {

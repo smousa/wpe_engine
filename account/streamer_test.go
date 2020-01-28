@@ -7,8 +7,8 @@ import (
 	"io"
 
 	"github.com/pkg/errors"
-	. "github.com/smousa/wpe_engine/account"
-	"github.com/smousa/wpe_engine/account/mocks"
+	. "github.com/wpe_merge/wpe_merge/account"
+	"github.com/wpe_merge/wpe_merge/account/mocks"
 	"github.com/stretchr/testify/mock"
 
 	. "github.com/onsi/ginkgo"

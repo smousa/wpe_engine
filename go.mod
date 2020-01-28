@@ -1,4 +1,4 @@
-module github.com/smousa/wpe_engine
+module github.com/wpe_merge/wpe_merge
 
 go 1.13
 

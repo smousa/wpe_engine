@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"path"
 
-	. "github.com/smousa/wpe_engine/account"
+	. "github.com/wpe_merge/wpe_merge/account"
 
 	"github.com/gorilla/mux"
 	. "github.com/onsi/ginkgo"

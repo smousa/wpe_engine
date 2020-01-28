@@ -2,7 +2,7 @@
 
 package mocks
 
-import account "github.com/smousa/wpe_engine/account"
+import account "github.com/wpe_merge/wpe_merge/account"
 import context "context"
 import mock "github.com/stretchr/testify/mock"
 
